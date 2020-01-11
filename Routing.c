@@ -1,3 +1,5 @@
+//Ne radi
+
 #include <stdio.h>
 
 #ifndef DEBUG
