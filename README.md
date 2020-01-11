@@ -2,5 +2,5 @@
 Zadaci iz Programiranja 1
 
 todo:
-Routing
+Routing,
 Skakavac
