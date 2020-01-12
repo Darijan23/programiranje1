@@ -1,5 +1,3 @@
-//Ne radi
-
 #include <stdio.h>
 
 #ifndef DEBUG
@@ -8,44 +6,32 @@
 
 int main() {
 	int brojevi[50];
-	int i, a, n, br = 0, dul = 0, pos = 0, uvjet = 1;
+	int i, a, n, br = -1, max = 0, dul = 0, pos = 0, uvjet = 1;
 	scanf("%d\n", &n);
 	for (i = 0; i < n; i++) {
 		scanf("%d ", &a);
-		DEBUG("%d ", a);
 		brojevi[i] = a;
 	}
-	DEBUG("\n");
 
-	while ((pos < n) && uvjet && (br < 500)) {
-		DEBUG("%d Uvjet\n", pos);
-		for (i = pos+1; i < n; i++) {
-			DEBUG("%d ", brojevi[i]);
-			if (brojevi[i] % 2 == 0) {
-				DEBUG("Paran\n");
-				if (i-pos >= dul) {
-					dul = i-pos;
-				}
-				if (brojevi[pos+1] % 2 != 0) {
-					uvjet = 0;
-					break;
-				} else {
-					pos = i+1;
-					br++;
-					uvjet = 1;
-					break;
-				}
-			} else {
-				DEBUG("Neparan\n");
-				uvjet = 0;
+	for (i = 0; i < n; i++) {
+		if (brojevi[i] % 2 == 0) {
+			br++;
+
+			if (dul > max) {
+				max = dul;
 			}
+			dul = 1;
+		} else {
+			dul++;
 		}
 	}
 
-	if (brojevi[n-1] % 2) {
+	if (brojevi[n-1] % 2 && br != 0) {
 		br *= 2;
+	} else if (br == 0) {
+		max = 0;
 	}
 
-	printf("%d %d\n", dul, br);
+	printf("%d %d\n", max, br);
 	return 0;
 }
