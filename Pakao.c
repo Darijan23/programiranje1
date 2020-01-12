@@ -12,13 +12,11 @@ int main() {
 	int kupljeno[4] = {0, 0, 0, 0};
 	int u = 1;
 	int l = 0;
-	float b, a, p;
+	float b;
 
 	for (int i = 0; i < 3; ++i) {
 		for (int j = 0; j < 4; ++j) {
-			scanf("%f %f ", &a, &p);
-			artikli[i][j] = a;
-			cijene[i][j] = p;
+			scanf("%f %f ", &artikli[i][j], &cijene[i][j]);
 		}
 	}
 	scanf("\n %f", &b);

@@ -6,12 +6,11 @@
 
 int main()
 {
-	int n, automat[10][10], i, j, u, jackpot = 0;
+	int n, automat[10][10], i, j, jackpot = 0;
 	scanf("%d\n", &n);
 	for (i = 0; i < n; i++) {
 		for (j = 0; j <n; j++) {
-			scanf("%d\n", &u);
-			automat[i][j] = u;
+			scanf("%d\n", &automat[i][j]);
 		}
 	}
 
