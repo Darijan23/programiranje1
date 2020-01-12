@@ -6,7 +6,7 @@
 
 int main() {
 	int brojevi[50];
-	int i, a, n, br = -1, max = 0, dul = 0, pos = 0, uvjet = 1;
+	int i, a, n, br = -1, max = 0, dul = 0;
 	scanf("%d\n", &n);
 	for (i = 0; i < n; i++) {
 		scanf("%d ", &a);
