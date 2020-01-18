@@ -5,20 +5,20 @@
 #define DEBUG(...)printf(__VA_ARGS__)
 #endif
 
-struct iglu {
+typedef struct {
 	int x;
 	int y;
 	int r;
-};
+} iglu;
 
-int isect(struct iglu i1,struct iglu i2) {
+int isect(iglu i1, iglu i2) {
 	float d = sqrt(pow(i1.x - i2.x, 2) + pow(i1.y -i2.y, 2));
 	return d < i1.r + i2.r;
 }
 
 int main() {
 	int i, j, n, c = 0, uvjet;
-	struct iglu pleme[100];
+	iglu pleme[100];
 	int odobreno[100];
 
 	scanf("%d\n", &n);
