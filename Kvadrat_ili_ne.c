@@ -1,5 +1,3 @@
-//Ne prolaze dva test primjera
-
 #include <stdio.h>
 #include <math.h>
 
@@ -17,8 +15,8 @@ float dist(point p1, point p2) {
 }
 
 int main() {
-	int i, indiag; //indiag je indeks udaljenosti dijagonale
-	float lens[3], diag = 0.0, sum = 0.0;
+	int i, uvjet = 0;
+	float lens[3];
 	point pts[4];
 
 	for (i = 0; i < 4; i++) {
@@ -26,20 +24,22 @@ int main() {
 	}
 
 	for (i = 0; i < 3; i++) {
-		lens[i] = dist(pts[0], pts[i]);
-		if (dist(pts[0], pts[i]) > diag) {
-			diag = dist(pts[0], pts[i]);
-			indiag = i;
-		}
+		lens[i] = dist(pts[0], pts[i+1]);
 	}
 
-	for (i = 0; i < 3; i++) {
-		if (i != indiag) {
-			sum += pow(lens[i], 2);
-		}
-	}
 
-	if (round(pow(diag, 2)) == round(sum)) {
+ 	if (round(pow(lens[2], 2)) == round(pow(lens[0], 2) + pow(lens[1], 2))){
+    	uvjet = 1;
+ 	}
+ 	if (round(pow(lens[1], 2)) == round(pow(lens[0], 2) + pow(lens[2], 2))){
+    	uvjet = 1;
+ 	}
+ 	if (round(pow(lens[0], 2)) == round(pow(lens[1], 2) + pow(lens[2], 2))){
+    	uvjet = 1;
+  	}
+
+
+	if (uvjet) {
 		printf("Kombiniram kvadrat");
 	} else {
 		printf("Ne kombiniram");
