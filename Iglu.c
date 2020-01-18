@@ -11,13 +11,6 @@ struct iglu {
 	int r;
 };
 
-/*
-int isect(int x1, int y1, int r1, int x2, int y2, int r2) {
-	float d = sqrt(pow(x1-x2, 2) + pow(y1-y2, 2));
-	return d < r1+r2;
-}
-*/
-
 int isect(struct iglu i1,struct iglu i2) {
 	float d = sqrt(pow(i1.x - i2.x, 2) + pow(i1.y -i2.y, 2));
 	return d < i1.r + i2.r;
