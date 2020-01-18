@@ -25,8 +25,10 @@ int main()
 				for (k = -1; k <= 1; k++) {
 					for (l = -1; l <= 1; l++) {
 						//nakon što nađe 'S', vrti od -1 do 1 po x i y (k i l) i to dodaje indeksu na kojem se nalazi 'S'
-						if (i+k < n && i+k >= 0 && j+l < m && j+l >= 0) {   	//ovim ifom izbjegne granične slučajeve
-							if (vrt[i+k][j+l] != 'S') { 						//ovim ifom ignoriramo stablo
+						if (i+k < n && i+k >= 0 && j+l < m && j+l >= 0) { 
+						//ovim ifom izbjegne granične slučajeve
+							if (vrt[i+k][j+l] != 'S') {
+							//ovim ifom ignoriramo stablo
 								vrt[i+k][j+l] = 'T';
 							}
 						}
