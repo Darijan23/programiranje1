@@ -6,5 +6,9 @@
 #endif
 
 int main() {
-	printf("%d %d %d\n", 2%5, 1%5, (-1)%5);
+	int aaa[4] = {0, 0, 0, 1};
+	printf("%d\n", aaa[4]);
+	printf("%d\n", aaa[3]);
+	aaa[5] = 16;
+	printf("%d %d %lu\n", aaa[3], aaa[5], sizeof(aaa)/sizeof(aaa[0]));
 }
