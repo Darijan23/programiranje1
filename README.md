@@ -2,4 +2,4 @@
 Zadaci iz Programiranja 1
 
 todo: 
-Proći fiziku
+chill
